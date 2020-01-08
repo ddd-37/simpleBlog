@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './FullPost.css';
+import "./FullPost.css";
 
-class FullPost extends Component {
-    render () {
-        let post = <p>Please select a Post!</p>;
-        post = (
-            <div className="FullPost">
-                <h1>Title</h1>
-                <p>Content</p>
-                <div className="Edit">
-                    <button className="Delete">Delete</button>
-                </div>
-            </div>
-
-        );
-        return post;
-    }
-}
+const FullPost = props => {
+  console.log(props);
+  return (
+    <div className="FullPost">
+      <h1>{props.title}</h1>
+      <p>{props.body}</p>
+      <div className="Edit">
+        <button className="Delete">Delete</button>
+      </div>
+    </div>
+  );
+};
 
 export default FullPost;
