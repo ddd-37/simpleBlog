@@ -27,12 +27,10 @@ class Blog extends Component {
           // and add a new key value with the author to each
           return { ...post, author: "Devon" };
         });
-        console.log(updatedPosts);
         this.setState({ posts: updatedPosts });
       })
       .catch(error => {
         this.setState({ error: true });
-        console.log(error);
       });
   }
 

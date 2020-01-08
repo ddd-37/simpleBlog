@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 
 import "./FullPost.css";
@@ -12,7 +12,6 @@ const deletepostHandler = id => {
 };
 
 const FullPost = props => {
-  console.log(props);
   return (
     <div className="FullPost">
       <h1>{props.title}</h1>
