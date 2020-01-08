@@ -3,6 +3,8 @@ import axios from "axios";
 import Post from "../../../components/Post/Post";
 import FullPost from "../FullPost/FullPost";
 
+import "./Posts.css";
+
 class Posts extends Component {
   state = {
     posts: []
