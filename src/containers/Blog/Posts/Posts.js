@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Post from "../../../components/Post/Post";
 import FullPost from "../FullPost/FullPost";
 
@@ -49,17 +50,18 @@ class Posts extends Component {
     if (!this.state.error) {
       posts = this.state.posts.map(post => {
         return (
-          <Post
-            title={post.title}
-            author={post.author}
-            key={post.id}
-            clicked={() => this.handlePostClick(post)}
-          />
+          <Link to={`/${post.id}`} key={post.id}>
+            <Post
+              title={post.title}
+              author={post.author}
+              clicked={() => this.handlePostClick(post)}
+            />
+          </Link>
         );
       });
 
       // If the user has not clicked on anything we should give them a little message letting them know what they should do
-      if (this.state.posts.length != 0) {
+      if (this.state.posts.length !== 0) {
         // Make sure there are posts before we ask the ask to select a post
         fullPost = <p style={{ textAlign: "center" }}>Please select a Post!</p>;
       }
@@ -67,6 +69,10 @@ class Posts extends Component {
       // If the user clicks on a blog post, we show the full post in the box just above the form
       // If a post was selected we need to pass the data from the post, down to the fullpost
       if (this.state.selectedPost) {
+        console.log(
+          "TCL: Posts -> render -> this.state.selectedPost",
+          this.state.selectedPost
+        );
         const { title, author, id, body } = { ...this.state.selectedPost };
         fullPost = (
           <FullPost

@@ -16,12 +16,12 @@
   color: black;
 }
 
-.Blog a:hover,
-.Blog a:active {
+.Blog li a:hover,
+.Blog li a:active {
   color: orange;
 }
 
-a.is-active {
+.Blog .is-active {
   color: orange;
   font-weight: bold;
 }
