@@ -20,3 +20,8 @@
 .Blog a:active {
   color: orange;
 }
+
+a.is-active {
+  color: orange;
+  font-weight: bold;
+}

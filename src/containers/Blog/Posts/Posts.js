@@ -58,10 +58,13 @@ class Posts extends Component {
         );
       });
 
-      // If the user clicks on a blog post, we show the full post in the box just above the form
-      // If the user has not clicked on anything we should give thema little message letting them know what they should do
-      fullPost = <p style={{ textAlign: "center" }}>Please select a Post!</p>;
+      // If the user has not clicked on anything we should give them a little message letting them know what they should do
+      if (this.state.posts.length != 0) {
+        // Make sure there are posts before we ask the ask to select a post
+        fullPost = <p style={{ textAlign: "center" }}>Please select a Post!</p>;
+      }
 
+      // If the user clicks on a blog post, we show the full post in the box just above the form
       // If a post was selected we need to pass the data from the post, down to the fullpost
       if (this.state.selectedPost) {
         const { title, author, id, body } = { ...this.state.selectedPost };

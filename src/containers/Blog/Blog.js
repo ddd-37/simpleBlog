@@ -32,6 +32,7 @@ class Blog extends Component {
         </header>
         <Route path="/" exact={true} component={Posts} />
         <Route path="/new-post" component={NewPost} />
+        <Route path="/:postId" component={Posts} />
       </div>
     );
   }
